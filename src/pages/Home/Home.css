@@ -1,0 +1,151 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    color: #032437;
+}
+
+html, body {
+    height: 100%;
+}
+
+.containerHome{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("../../assets/images/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.items{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    align-items: center;
+    width: 600px;
+    margin: 30px;
+    border-radius: 40px;
+    background-color: rgba(255, 255, 255, 0.811);
+}
+
+.logo{
+    width: 30%;
+    max-width: 140px;
+
+    height: auto;        /* deixa proporção natural */
+    aspect-ratio: 1 / 1;
+
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+
+/* LINKS DOS ÍCONES */
+.linkIcon{
+    width: auto;
+    margin: 5px;
+    flex-shrink: 0;
+}
+/* CONTAINER DOS ÍCONES */
+.sectionItems{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 100%; /* 🔥 ocupa toda largura */
+    flex-wrap: nowrap; /* desktop não quebra */
+}
+
+/* BOTÕES */
+button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    padding: 0; /* 🔥 evita interferência */
+    background-color: transparent;
+    cursor: pointer;  
+}
+
+/* ÍCONES */
+.icon{
+    width: 50px;
+    height: 50px;
+    min-width: 50px;  /* 🔥 trava tamanho mínimo */
+    min-height: 50px;
+    border-radius: 50%;
+    transition: transform 0.2s;
+}
+
+.icon:hover{
+    transform: scale(1.1);
+}
+
+/* BOTÃO DE VOTO (mantido) */
+.sectionItemsVote{
+    display: flex;
+    flex-direction: column;
+}
+
+#vote{
+    background-color: #032437;
+    color: white;
+    font-size: 1.2rem;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+#titleVote{
+    margin-top: 15px;
+    background-color: #032437;
+    color: white;
+}
+
+.items h3{
+    font-weight: 300;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+
+    .items{
+        width: 90%;
+        padding: 20px;
+    }
+
+    .items img{
+        width: 40%;
+    }
+
+    h2, h3{
+        text-align: center;
+    }
+
+    /* agora sim quebra corretamente */
+    .sectionItems{
+        flex-wrap: wrap;
+    }
+
+    .icon{
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        min-height: 40px;
+    }
+}
+
+/* 📱 MOBILE PEQUENO */
+@media (max-width: 480px) {
+
+    .icon{
+        width: 35px;
+        height: 35px;
+        min-width: 35px;
+        min-height: 35px;
+    }
+}
