@@ -33,16 +33,24 @@ html, body {
     background-color: rgba(255, 255, 255, 0.811);
 }
 
+/*  LOGO /
 .logo{
-    width: 30%;
-    max-width: 140px;
-
-    height: auto;        /* deixa proporção natural */
-    aspect-ratio: 1 / 1;
+    width: 120px !important;
+    height: 120px !important;
+    min-width: 120px;
+    min-height: 120px;
 
     border-radius: 50%;
     object-fit: cover;
+
     display: block;
+    flex-shrink: 0;
+}
+
+/*REMOVE QUALQUER INTERFERÊNCIA GLOBAL */
+img{
+    max-width: 100%;
+    height: auto;
 }
 
 /* LINKS DOS ÍCONES */
@@ -51,14 +59,15 @@ html, body {
     margin: 5px;
     flex-shrink: 0;
 }
+
 /* CONTAINER DOS ÍCONES */
 .sectionItems{
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 15px;
-    width: 100%; /* 🔥 ocupa toda largura */
-    flex-wrap: nowrap; /* desktop não quebra */
+    width: 100%;
+    flex-wrap: nowrap;
 }
 
 /* BOTÕES */
@@ -67,7 +76,7 @@ button{
     justify-content: center;
     align-items: center;
     border: none;
-    padding: 0; /* 🔥 evita interferência */
+    padding: 0;
     background-color: transparent;
     cursor: pointer;  
 }
@@ -76,7 +85,7 @@ button{
 .icon{
     width: 50px;
     height: 50px;
-    min-width: 50px;  /* 🔥 trava tamanho mínimo */
+    min-width: 50px;
     min-height: 50px;
     border-radius: 50%;
     transition: transform 0.2s;
@@ -86,7 +95,7 @@ button{
     transform: scale(1.1);
 }
 
-/* BOTÃO DE VOTO (mantido) */
+/* BOTÃO DE VOTO */
 .sectionItemsVote{
     display: flex;
     flex-direction: column;
@@ -100,17 +109,11 @@ button{
     border-radius: 20px;
 }
 
-#titleVote{
-    margin-top: 15px;
-    background-color: #032437;
-    color: white;
-}
-
 .items h3{
     font-weight: 300;
 }
 
-/* 📱 MOBILE */
+/*  MOBILE */
 @media (max-width: 768px) {
 
     .items{
@@ -118,15 +121,10 @@ button{
         padding: 20px;
     }
 
-    .items img{
-        width: 40%;
-    }
-
     h2, h3{
         text-align: center;
     }
 
-    /* agora sim quebra corretamente */
     .sectionItems{
         flex-wrap: wrap;
     }
@@ -137,9 +135,15 @@ button{
         min-width: 40px;
         min-height: 40px;
     }
+
+    /* LOGO MOBILE */
+    .logo{
+        width: 100px !important;
+        height: 100px !important;
+    }
 }
 
-/* 📱 MOBILE PEQUENO */
+/*  MOBILE PEQUENO */
 @media (max-width: 480px) {
 
     .icon{
@@ -147,5 +151,10 @@ button{
         height: 35px;
         min-width: 35px;
         min-height: 35px;
+    }
+
+    .logo{
+        width: 90px !important;
+        height: 90px !important;
     }
 }
